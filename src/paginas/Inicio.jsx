@@ -16,6 +16,24 @@ const Inicio = () => {
 			console.log(error);
 		}
 	}, []);
+	const handleEliminar = async (id) => {
+		const confirmacion = confirm("¿Deseas eliminar este ciente?");
+		if (confirmacion) {
+			try {
+				const url = `http://localhost:3000/clientes/${id}`;
+				const respuesta = await fetch(url, {
+					method: "DELETE",
+				});
+				await respuesta.json();
+				const clientesActualizado = clientes.filter(
+					(cliente) => cliente.id !== id,
+				);
+				setClientes(clientesActualizado);
+			} catch (error) {
+				console.log(error);
+			}
+		}
+	};
 	return (
 		<>
 			<h1 className="text-4xl text-blue-900 font-black">Clientes</h1>
@@ -31,7 +49,11 @@ const Inicio = () => {
 				</thead>
 				<tbody>
 					{clientes.map((cliente) => (
-						<Clientes key={cliente.id} cliente={cliente} />
+						<Clientes
+							key={cliente.id}
+							cliente={cliente}
+							handleEliminar={handleEliminar}
+						/>
 					))}
 				</tbody>
 			</table>

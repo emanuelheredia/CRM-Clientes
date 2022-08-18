@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Clientes from "../components/Clientes";
+import Spinner from "../components/Spinner";
 
 const VerCliente = () => {
 	const { id } = useParams();
@@ -23,7 +24,7 @@ const VerCliente = () => {
 	}, []);
 
 	return cargando ? (
-		<p>Cargando...</p>
+		<Spinner />
 	) : Object.keys(cliente).length === 0 ? (
 		<p>No hay Resultados</p>
 	) : (
