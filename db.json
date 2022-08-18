@@ -1,20 +1,3 @@
 {
-  "clientes": [
-    {
-      "nombre": "Emanuel2wdwd",
-      "empresa": "Lubricentro HYH",
-      "telefono": "3512431240",
-      "email": "ema_359@hotmail.com",
-      "notas": "Gracias",
-      "id": 2
-    },
-    {
-      "nombre": "dwdwddwfwfwwfw",
-      "empresa": "dwdwd",
-      "telefono": "4545",
-      "email": "dwfwf@659.com",
-      "notas": "6565fwfwf",
-      "id": 4
-    }
-  ]
+  "clientes": []
 }
